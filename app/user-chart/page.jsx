@@ -1,7 +1,7 @@
 /** @format */
 
 "use client";
-
+import { useEffect, useState } from "react";
 import UserTable from "./components/UserTable";
 import UserChart from "./components/UserChart";
 
