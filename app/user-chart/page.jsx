@@ -3,6 +3,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import UserTable from "./components/UserTable";
 
 export default function UsersChartPage() {
 	const [users, setUsers] = useState([]);
@@ -17,5 +18,17 @@ export default function UsersChartPage() {
 		fetchUsers();
 	}, []);
 
-	return <div></div>;
+	return (
+		<div className='max-w-6xl mx-auto p-6'>
+			<h1 className='text-3xl font-bold mb-6 text-center text-gray-800'>User Table & Chart</h1>
+
+			{users.length > 0 ? (
+				<>
+					<UserTable users={users} />
+				</>
+			) : (
+				<p className='text-center'>Loading...</p>
+			)}
+		</div>
+	);
 }
