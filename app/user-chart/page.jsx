@@ -2,8 +2,8 @@
 
 "use client";
 
-import { useEffect, useState } from "react";
 import UserTable from "./components/UserTable";
+import UserChart from "./components/UserChart";
 
 export default function UsersChartPage() {
 	const [users, setUsers] = useState([]);
@@ -25,6 +25,7 @@ export default function UsersChartPage() {
 			{users.length > 0 ? (
 				<>
 					<UserTable users={users} />
+					<UserChart users={users} />
 				</>
 			) : (
 				<p className='text-center'>Loading...</p>
